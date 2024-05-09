@@ -1,6 +1,6 @@
 import tensorflow as tf
 import numpy as np
-import yfinance as yf
+import yfinance as yf #api de yahoo
 from pandas_datareader import data as pdr
 
 # Obtener datos
