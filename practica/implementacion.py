@@ -1,6 +1,6 @@
 import tensorflow as tf
 import numpy as np
-import yfinance as yf #api de yahoo
+import yfinance as yf
 from pandas_datareader import data as pdr
 
 # Obtener datos
@@ -8,7 +8,7 @@ yf.pdr_override()
 
 tickers = ['BTC-USD','ETH-USD']
 start = '2023-05-08'
-end = '2024-05-08'
+end = '2024-05-09'
 
 btc_data = pdr.get_data_yahoo(tickers[0], start, end)['Close'].values.astype(float)
 eth_data = pdr.get_data_yahoo(tickers[1], start, end)['Close'].values.astype(float)
@@ -28,8 +28,8 @@ ethereum = btc_scaled[1:]
 
 # definir modelo
 modelo = tf.keras.Sequential([
-    tf.keras.layers.Dense(units=3, input_shape=[1]),
-    tf.keras.layers.Dense(units=10),
+    tf.keras.layers.Dense(units=30, input_shape=[1]), #! 30 y 60 el mejor tiempo hasta ahora
+    tf.keras.layers.Dense(units=60),
     tf.keras.layers.Dense(units=1)
 ])
 
