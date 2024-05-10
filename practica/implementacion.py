@@ -34,8 +34,9 @@ modelo = tf.keras.Sequential([
 ])
 
 # compilar modelo
-modelo.compile(optimizer=tf.keras.optimizers.Adam(0.01), loss='mean_squared_error') #adam learning rate 
-
+modelo.compile(optimizer=tf.keras.optimizers.Adam(0.01), loss='mean_squared_error') #adam learning rate
+                                                # 0.0.1 != 0.1 pasos mas cortos
+                                                # optimizando mas la data
 # entrenar modelo
 historial = modelo.fit(bitcoin, ethereum, epochs=1000, verbose=False) # historial guarda la perdida en cada epoca
 
